@@ -1,4 +1,4 @@
-A simple tic-tac-toe AI that can play againsta a player. 
+A simple tic-tac-toe AI that can play against a player. 
 
 
 Computer is playing as X and player will be playing as O. 
