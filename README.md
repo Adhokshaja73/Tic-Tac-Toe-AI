@@ -10,15 +10,6 @@ The board is a 3x3 grid that can be mapped to keys 1-9 in the NUMPAD.
 When any number is pressed, O will be written in the position of the number in the board if it is free.
 
 
-ScreenShots :
- 
- ![image](https://user-images.githubusercontent.com/95070489/171449199-f1735db0-10a5-4c57-adc0-1f3c96f37602.png)
-
-![image](https://user-images.githubusercontent.com/95070489/171449290-3033a5e5-6b8d-459f-bbe5-5554df129786.png)
-
-![image](https://user-images.githubusercontent.com/95070489/171449387-b52487a8-331e-4b8b-a63e-fac43cbbbade.png)
-
-
 
 Working:
     First two plays by the computer are made random. When it's turn of the computer for the third time, 
