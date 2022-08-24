@@ -103,7 +103,7 @@ void takeInput(int board[][3], int turn, int gameTurn)
 
     if (turn == 0)
     {
-        if (gameTurn > 4)
+        if (gameTurn > 2)
         {
             rootNode = generateTree(board, turn, gameTurn, prevMove);
             if (rootNode == NULL)
@@ -150,9 +150,8 @@ node *generateTree(int board[][3], int turn, int depth, int moveMade)
     newNode->result = checkWin(board);
     newNode->turn = turn;
     newNode->childNode = malloc(sizeof(node *) * 7);
-    if (newNode->result == 1 || depth == 0)
+    if (newNode->result == 1)
     {
-
         return (newNode);
     }
     for (i = 0; i < 3; i += 1)
@@ -164,8 +163,8 @@ node *generateTree(int board[][3], int turn, int depth, int moveMade)
                 int newBoard[3][3];
                 copyBoard(newBoard, board);
                 newBoard[i][j] = turn;
-
-                if (checkWin(newBoard) == -1)
+                int winState = checkWin(newBoard);
+                if (winState == -1 || (depth == 0 && winState != 1))
                 {
                     return (NULL);
                 }
@@ -186,7 +185,7 @@ node *generateTree(int board[][3], int turn, int depth, int moveMade)
 
 int getBestMoveIndex(node *root)
 {
-
+    
 }
 
 void copyBoard(int newBoard[3][3], int board[][3])
@@ -421,6 +420,15 @@ void addToBoard(int board[][3], int turn, int pos, int gameTurn)
         break;
     }
 }
+
+
+/*
+		Takes in a boardState 
+		Returns 1 if X is winning
+		Returns -1 if O is winning
+		else returns 0
+
+*/
 int checkWin(int board[][3])
 {
     int i, j, r1, r2, r3, c1, c2, c3, d1, d2;
